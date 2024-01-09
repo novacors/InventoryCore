@@ -7,10 +7,10 @@ async function bootstrap() {
   const configService = app.get(ConfigService);
 
   app.enableCors({
-    origin: configService.get('ALLOWED_ORIGINS'),
+    origin: configService.get<string>('ALLOWED_ORIGINS'),
     credentials: true,
   });
 
-  await app.listen(configService.get('SERVER_PORT'));
+  await app.listen(configService.get<number>('SERVER_PORT'));
 }
 bootstrap();
