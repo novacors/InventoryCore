@@ -7,6 +7,8 @@ import { GraphQLModule } from '@nestjs/graphql';
 
 import { AppResolver } from './app.resolver';
 import { AppService } from './app.service';
+import { ProductModule } from './product/product.module';
+
 
 @Module({
   imports: [
@@ -25,6 +27,9 @@ import { AppService } from './app.service';
       // playground: true,
       autoSchemaFile: join(process.cwd(), 'src/schema.gql'),
     }),
+
+    ProductModule,
+
   ],
   providers: [AppService, AppResolver],
 })
