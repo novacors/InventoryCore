@@ -3,13 +3,13 @@ import { CreateProductInput } from './dto/create-product.input';
 import { UpdateProductInput } from './dto/update-product.input';
 
 @Injectable()
-export class ProductService {
+export class ProductsService {
   create(createProductInput: CreateProductInput) {
     return 'This action adds a new product';
   }
 
   findAll() {
-    return `This action returns all product`;
+    return `This action returns all products`;
   }
 
   findOne(id: number) {

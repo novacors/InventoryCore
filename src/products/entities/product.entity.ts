@@ -1,12 +1,8 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
-import { Document, ObjectId } from 'mongoose';
-import mongoose from 'mongoose';
+import { Document, Types } from 'mongoose';
 
-@Schema()
+@Schema( { versionKey: true, timestamps: true })
 export class Product extends Document{
-
-  @Prop({type: mongoose.Types.ObjectId, auto: true})
-  _id: ObjectId;
 
   @Prop({ type: String, unique: true, required: true, min: 1, max: 30 })
   name: string;
@@ -33,14 +29,14 @@ export class Product extends Document{
   @Prop({ type: String, required: false })
   description: string;
 
-  @Prop({ type: mongoose.Types.ObjectId, ref: 'ProductType', required: true })
+  /* @Prop({ type: Types.ObjectId, ref: 'ProductType', required: true })
   product_type_id: String;
 
-  @Prop({ type: mongoose.Types.ObjectId, ref: 'Categories', required: true })
+  @Prop({ type: Types.ObjectId, ref: 'Categories', required: true })
   category_id: number;
 
-  @Prop({ type: mongoose.Types.ObjectId, ref: 'Brands', required: true })
-  brand_id: number;
+  @Prop({ type: Types.ObjectId, ref: 'Brands', required: true })
+  brand_id: number; */
 
   @Prop({ type: Number, required: true, min: 0, multipleOf: 1 })
   sale_price: number;

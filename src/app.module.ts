@@ -8,6 +8,7 @@ import { GraphQLModule } from '@nestjs/graphql';
 import { AppResolver } from './app.resolver';
 import { AppService } from './app.service';
 import { ProductModule } from './product/product.module';
+import { ProductsModule } from './products/products.module';
 
 
 @Module({
@@ -29,6 +30,8 @@ import { ProductModule } from './product/product.module';
     }),
 
     ProductModule,
+
+    ProductsModule,
 
   ],
   providers: [AppService, AppResolver],
