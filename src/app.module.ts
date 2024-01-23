@@ -7,6 +7,7 @@ import { GraphQLModule } from '@nestjs/graphql';
 
 import { AppResolver } from './app.resolver';
 import { AppService } from './app.service';
+import { CategoriesModule } from './categories/categories.module';
 
 @Module({
   imports: [
@@ -25,6 +26,8 @@ import { AppService } from './app.service';
       // playground: true,
       autoSchemaFile: join(process.cwd(), 'src/schema.gql'),
     }),
+
+    CategoriesModule,
   ],
   providers: [AppService, AppResolver],
 })
