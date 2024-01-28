@@ -1,0 +1,71 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Product {
+  _id: ID!
+  name: String!
+  serie: String!
+  barcode: String!
+  status: Boolean!
+  purchase_active: Boolean!
+  sale_active: Boolean!
+  labels: [String!]!
+  description: String!
+  sale_price: Float!
+  purchase_price: Float!
+  is_favorite: Boolean!
+  image: String!
+  stock: Float!
+  unit_measure: String!
+  size: Float!
+}
+
+type Query {
+  getHello: String!
+  products: [Product!]!
+  product(id: String!): Product!
+}
+
+type Mutation {
+  createProduct(createProductInput: CreateProductInput!): Product!
+  updateProduct(updateProductInput: UpdateProductInput!): Product!
+  removeProduct(id: String!): Boolean!
+}
+
+input CreateProductInput {
+  name: String!
+  serie: String!
+  barcode: String!
+  status: Boolean!
+  purchase_active: Boolean!
+  sale_active: Boolean!
+  labels: [String!]!
+  description: String!
+  sale_price: Float!
+  purchase_price: Float!
+  is_favorite: Boolean!
+  image: String!
+  stock: Float!
+  unit_measure: String!
+  size: Float!
+}
+
+input UpdateProductInput {
+  name: String
+  serie: String
+  barcode: String
+  status: Boolean
+  purchase_active: Boolean
+  sale_active: Boolean
+  labels: [String!]
+  description: String
+  sale_price: Float
+  purchase_price: Float
+  is_favorite: Boolean
+  image: String
+  stock: Float
+  unit_measure: String
+  size: Float
+  _id: ID!
+}
